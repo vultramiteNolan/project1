@@ -1,0 +1,26 @@
+name: Add two numbers
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Add two numbers
+        run: |
+          num1=10
+          num2=20
+          sum=$(($num1 + $num2))
+          echo "Sum of $num1 and $num2 is $sum" > output.txt
+
+      - name: Upload output.txt
+        uses: actions/upload-artifact@v3
+        with:
+          name: output.txt
+          path: output.txt
