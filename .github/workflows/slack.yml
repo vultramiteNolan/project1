@@ -1,0 +1,56 @@
+
+name: DASTScan
+
+# Controls when the workflow will run
+on:
+# Remove following two comments to run this action on daily basis.
+#    schedule:
+#      - cron: '0 0 * * *'
+
+# Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+
+jobs:
+  build:
+    # Using the latest ubuntu for the run
+    runs-on: ubuntu-latest
+    
+    
+    steps:
+      - uses: actions/checkout@v4
+      
+      # Capturing the start time
+      - name: Capture Start Time
+        id: start-time
+        run: echo "::set-output name=time::$(date +'%Y-%m-%d %H:%M:%S')"
+
+      # notifying the start of a workflow  
+      - name: Slack Notification for Starting of DAST Scan
+        id: slack-start
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+            payload: |
+              {
+              "text": "The Dast Scan for : ${{secrets.DUMMMY_VARIABLE}} has started at ${{ steps.start-time.outputs.time }} "
+              }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        
+
+      # Capturing the start time
+      - name: Capture Start Time
+        id: end-time
+        run: echo "::set-output name=time::$(date +'%Y-%m-%d %H:%M:%S')"
+        
+      - name: Slack Notification for Completion of DAST Scan
+        id: slack-end
+        uses: slackapi/slack-github-action@v1.24.0
+        with:
+            payload: |
+              {
+              "text": "The Dast Scan for : ${{secrets.DUMMMY_VARIABLE}} has finished at ${{ steps.end-time.outputs.time }}, the reports can be found here : "
+              }
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+       
