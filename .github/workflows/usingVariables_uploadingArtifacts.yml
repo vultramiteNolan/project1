@@ -18,7 +18,7 @@ jobs:
           num2=20
           sum=$(($num1 + $num2))
           echo "Sum of $num1 and $num2 is $sum" > output.txt
-          echo "${{ env.URL }}"
+          echo "${{ github.variables.URL }}"
           
 
       - name: Upload output.txt
