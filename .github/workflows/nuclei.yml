@@ -27,7 +27,7 @@ jobs:
         # Target to run nuclei scan
           target: https://kshitijnigam.com
   
-          output: true
+          output: jeher.output.json
         # Write nuclei output in JSON format
           json: true
     
