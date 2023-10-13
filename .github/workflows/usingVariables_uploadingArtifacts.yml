@@ -24,5 +24,5 @@ jobs:
       - name: Upload output.txt
         uses: actions/upload-artifact@v3
         with:
-          name: output.txt
+          name: temp_${{ vars.URL }}_yoyo.txt
           path: temp_${{ vars.URL }}_yoyo.txt
