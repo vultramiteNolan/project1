@@ -22,13 +22,14 @@ jobs:
           
 
       - name: Upload output.txt
+        id: jack
         uses: actions/upload-artifact@v3
         with:
           name: output.txt
           path: temp_${{ vars.temp }}_yoyo.txt
-        id: jack
+        
 
 
       - name: Output Artifact URL
         run: |
-          echo ${{ steps.jack.artifactUrl }}
+          echo ${{ steps.jack.outputs.artifactUrl }}
