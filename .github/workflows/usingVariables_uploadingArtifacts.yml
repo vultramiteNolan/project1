@@ -26,8 +26,9 @@ jobs:
         with:
           name: output.txt
           path: temp_${{ vars.temp }}_yoyo.txt
+        id: jack
 
 
       - name: Output Artifact URL
         run: |
-          echo ${{ steps.get-artifact-url.outputs.artifactUrl }}
+          echo ${{ steps.jack.artifactUrl }}
