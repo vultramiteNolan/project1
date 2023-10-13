@@ -1,6 +1,6 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: nuclei
 
 # Controls when the workflow will run
 on:
@@ -27,7 +27,7 @@ jobs:
         # Target to run nuclei scan
           target: https://kshitijnigam.com
   
-          output: temp.json
+          output: true
         # Write nuclei output in JSON format
           json: tesmp.json
     
