@@ -22,4 +22,6 @@ jobs:
       # Capturing the start time
       - name: Capture Start Time
         id: start-time
-        run: echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M-%S')"
+        run: |
+          echo "::set-output name=time::$(date +'%Y-%m-%d-%H-%M-%S')"
+          echo ${{ steps.start-time.outputs.time }}
