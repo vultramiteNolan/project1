@@ -22,14 +22,16 @@ jobs:
           
 
       - name: Upload output.txt
-        id: jack
+       
         uses: actions/upload-artifact@v3
         with:
-          name: output.txt
+          name: temp_${{ vars.temp }}_yoyo.txt
           path: temp_${{ vars.temp }}_yoyo.txt
         
 
 
       - name: Output Artifact URL
         run: |
-          echo ${{ steps.jack.outputs.artifactUrl }}
+          echo https://github.com/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID/artifacts/artifacts/temp_${{ vars.temp }}_yoyo.txt
+ 
+         
