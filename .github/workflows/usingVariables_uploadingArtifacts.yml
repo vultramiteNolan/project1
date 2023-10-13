@@ -25,4 +25,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: output.txt
-          path: ${{ vars.URL }}_yoyo.txt
+          path: temp_${{ vars.URL }}_yoyo.txt
