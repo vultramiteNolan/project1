@@ -29,5 +29,5 @@ jobs:
   
           output: true
         # Write nuclei output in JSON format
-          json: tesmp.json
+          json: true
     
