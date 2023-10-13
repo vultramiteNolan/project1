@@ -28,6 +28,9 @@ jobs:
           target: https://kshitijnigam.com
   
           output: jeher.output.json
-        # Write nuclei output in JSON format
-          json: true
+
+      - name: output
+        run: |
+          ls
+          
     
