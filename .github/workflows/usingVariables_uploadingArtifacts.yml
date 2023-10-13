@@ -17,7 +17,7 @@ jobs:
           num1=10
           num2=20
           sum=$(($num1 + $num2))
-          echo "Sum of $num1 and $num2 is $sum" > output.txt
+          echo "Sum of $num1 and $num2 is $sum" > temp_${{ vars.temp }}_yoyo.txt
           echo "${{ vars.URL }}"
           
 
