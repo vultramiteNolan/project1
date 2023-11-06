@@ -26,8 +26,7 @@ jobs:
         with:
         # Target to run nuclei scan
           target: https://kshitijnigam.com
-          flags: "-severity low -stats"
-          output: jeher.output.json
+          templates: templates
 
       - name: output
         run: |
